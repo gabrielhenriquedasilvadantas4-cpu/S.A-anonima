@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Relíquias da S.A. Fechada</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Bitter:wght@400;600;700&family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;600;700&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#070707;--navy:#121211;--panel:#131212;--line:#282725;--hair:#171716;--ink:#f5efe4;--silver:#b8b4ac;--mute:#8c8882;--gold:#aeaaa2;--gold2:#ddd8ce;--vio:#ada9a1;--teal:#c5c0b7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;min-height:100%;color:var(--ink);font:16px/1.65 Manrope,system-ui,sans-serif;background:radial-gradient(900px 600px at 50% 16%,#1d1d1b,transparent 70%),linear-gradient(#0a0a0a,#070707)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.lines{position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 calc(100% / 3 - 1px),var(--hair) calc(100% / 3 - 1px) calc(100% / 3))}
+@media(min-width:760px){.lines{background:repeating-linear-gradient(90deg,transparent 0 calc(100% / 6 - 1px),var(--hair) calc(100% / 6 - 1px) calc(100% / 6))}}
+.grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.08;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:Italiana,"Cormorant Garamond",Georgia,serif;font-weight:400;line-height:1.1;margin:0}
+h2{font-size:clamp(2rem,5vw,2.9rem);color:var(--silver);margin-bottom:.4em}
+p{margin:.3em 0 .9em}
+.ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;width:28px;height:28px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:10px 20px;background:color-mix(in srgb,var(--bg) 92%,transparent)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--gold);text-decoration:none}
+.brand span{color:#f2ede2;font-weight:700;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
+.mono{width:38px;height:38px}
+nav{order:3;width:100%;display:flex;gap:26px}
+nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;color:var(--silver);text-decoration:none;font-weight:600;font-size:.76rem;letter-spacing:.06em}
+nav a[aria-current="page"]{color:#f2ede2}
+nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:7px;height:1px;background:var(--gold)}
+nav a:focus-visible,.brand:focus-visible,.ul:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.hdr-r{display:flex;align-items:center;gap:20px}
+.ul{color:#f2ede2;font-size:.84rem;text-decoration:underline;text-underline-offset:5px}
+.dots{width:20px;color:#f2ede2}
+@media(min-width:760px){header{display:grid;grid-template-columns:1fr auto 1fr;padding:14px 44px}nav{order:0;width:auto;gap:36px}.hdr-r{justify-self:end}}
+main{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:10px 22px 80px}
+button,.btn{font:600 .78rem Manrope,sans-serif;letter-spacing:.04em;color:var(--ink);background:transparent;border:1px solid #f2ede255;border-radius:99px;padding:11px 22px;cursor:pointer;min-height:44px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+button:hover,.btn:hover{border-color:#f2ede2}button:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+button[aria-pressed="true"],.fill,.prim{background:#f2ede2;color:#070707;border-color:#f2ede2}
+.hero{position:relative;min-height:660px;margin-bottom:30px}
+.hero::before{content:"";position:absolute;left:50%;top:8%;width:700px;height:700px;max-width:100%;transform:translateX(-50%);background:radial-gradient(circle,#2c2b29,transparent 62%);z-index:0}
+.eyebrow{position:relative;margin:14px 0 0;text-align:center;font-weight:700;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:#f2ede2}
+.big{position:relative;text-align:center;font-size:clamp(3.1rem,14.5vw,11.5rem);line-height:1;letter-spacing:.05em;padding-left:.05em;background:linear-gradient(180deg,#ece7dc 8%,#8c8983 62%,#413f3c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fig{position:absolute;left:50%;top:84px;width:min(330px,70vw);transform:translateX(-50%);z-index:2;filter:drop-shadow(0 20px 40px #000000)}
+.vt{position:absolute;right:0;top:30%;writing-mode:vertical-rl;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.hl{position:absolute;left:0;bottom:30px;max-width:250px;z-index:3}
+.hl h3{font-size:1.6rem;color:#f2ede2}.hl p{font-size:.8rem;color:var(--silver)}
+.more{color:#f2ede2;font-size:.8rem;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}
+.hr{position:absolute;right:0;bottom:30px;z-index:3;text-align:right}
+.lbl{font-size:.8rem;color:var(--silver);margin-bottom:10px;letter-spacing:.06em}
+.tiles{display:flex;gap:10px;justify-content:flex-end}
+.tile{width:76px;padding:10px 6px;display:flex;flex-direction:column;gap:6px;border-radius:14px;background:var(--navy);border-color:var(--line);font-size:.68rem;color:var(--silver);min-height:0}
+.tile .ic{color:var(--gold);width:30px;height:30px}.tile:first-child{background:#21201e;border-color:#f2ede240}
+@media(max-width:759px){.hero{min-height:0}.fig{position:relative;left:auto;top:auto;transform:none;display:block;margin:-6px auto 0}.vt{display:none}.hl,.hr{position:static;max-width:none;text-align:left;margin-top:16px}.tiles{justify-content:flex-start}}
+.licoes{margin-top:30px}
+.sec{font:400 clamp(2.2rem,6vw,3.6rem)/1.1 Italiana,serif;color:var(--silver);margin:0 0 18px}
+.ltabs{display:flex;gap:6px 28px;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.ltab{border:0;border-radius:0;background:none;padding:10px 2px;min-height:44px;color:var(--mute);font-size:.86rem;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px}
+.ltab[aria-selected="true"]{color:#f2ede2;border-bottom-color:#f2ede2}
+.lpan{display:grid;grid-template-columns:1fr minmax(170px,250px) 1fr;gap:30px;align-items:center;padding:34px 0 10px}
+.pl h3{font-size:1.8rem;color:var(--silver);margin-bottom:8px}.pl p{color:var(--silver);font-size:.95rem}
+.relic{aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,#272624,transparent 68%);color:var(--gold)}
+.relic .ic{width:58%;height:58%;stroke-width:1.3;filter:drop-shadow(0 0 16px #aeaaa299)}
+.nav2{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--silver);font-size:.85rem;border-top:1px dashed var(--line);padding-top:10px}
+.arr{width:44px;padding:0;font-size:1.3rem}
+.dots2{display:flex;gap:6px;justify-content:flex-end;margin:8px 0 14px}.dots2 i{width:5px;height:5px;border-radius:50%;background:var(--line)}.dots2 i.on{background:#f2ede2}
+.det{font-size:.95rem;color:var(--silver)}.det ul,.det ol{padding-left:20px;margin:.2em 0 .6em}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:380px;font-size:.88rem}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{color:var(--gold)}
+@media(max-width:759px){.lpan{grid-template-columns:1fr}.relic{order:-1;width:170px;margin:0 auto}}
+.why{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:30px;align-items:end;margin-top:70px}
+.frag{width:100%;height:auto;filter:contrast(1.1) brightness(.88);-webkit-mask-image:linear-gradient(to top,transparent,#000000 38%);mask-image:linear-gradient(to top,transparent,#000000 38%)}
+.wt{text-align:right;padding-bottom:30px}.wt p{margin-left:auto;max-width:46ch;color:var(--silver)}
+.bts{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+@media(max-width:759px){.why{grid-template-columns:1fr}.frag{max-width:260px;margin:auto}}
+.glass{background:color-mix(in srgb,var(--navy) 92%,transparent);border:1px solid var(--line);border-radius:8px;padding:16px 20px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+.meter{flex:1;min-width:120px;height:3px;background:var(--line);overflow:hidden}.meter i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.deck{perspective:1200px;max-width:580px;margin:20px auto}
+.card{position:relative;min-height:310px;transform-style:preserve-3d;transition:transform .6s;cursor:pointer;outline-offset:6px;border-radius:14px}
+.card:focus-visible{outline:2px solid var(--teal)}.card.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;border-radius:14px;border:1px solid #f2ede230;background:radial-gradient(circle at 50% 0,#252423,var(--navy))}
+.face::before{content:"";position:absolute;left:50%;top:50%;width:170px;height:170px;margin:-85px 0 0 -85px;border:6px solid #f2ede2;border-radius:50%;opacity:.05}
+.back{transform:rotateY(180deg);border-color:var(--gold)}
+.face p{position:relative;font:500 clamp(1.45rem,4.6vw,1.95rem)/1.3 "Cormorant Garamond",serif;margin:.4em 0;color:#f2ede2}
+.tag{position:relative;color:var(--gold);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.face small{position:relative;color:var(--mute);margin-top:8px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.q{margin:12px 0}.q .tabs{display:flex;gap:10px;margin-top:10px}
+.fb{min-height:1.6em;font-weight:700;margin-top:8px}.ok{color:var(--teal)}.no{color:#b6b2aa}
+.lab{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:26px;align-items:center}
+#disc{width:100%;height:auto;cursor:pointer;filter:drop-shadow(0 0 14px #f2ede226)}
+#disc path{stroke:#f2ede2;stroke-width:2;stroke-linejoin:round;transition:fill .2s}#disc path:focus-visible{stroke:var(--teal);stroke-width:5}
+.legend{list-style:none;padding:0;margin:0 0 10px}.legend li{display:flex;align-items:center;gap:10px;margin:4px 0}.dot{width:16px;height:16px;border-radius:50%;border:1px solid #f2ede2}
+input[type=number]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:9em}
+label{display:inline-block;margin:6px 16px 6px 0}
+.src{font-size:.8rem;color:var(--mute);margin-top:34px}
+@media(max-width:640px){.lab{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.card,.meter i{transition:none}html{scroll-behavior:auto}}
+/* baroque */
+:root{--bg:#090908;--navy:#131312;--panel:#131312;--line:#2f2e2c;--hair:#141413;--ink:#eee8de;--silver:#d0cbc2;--mute:#95918b;--gold:#aca8a0;--gold2:#d2cec4;--vio:#726f6a;--teal:#c7c3ba;--cream:#e5e0d6}
+body{background:radial-gradient(800px 600px at 15% -80px,#2b2a28 0,transparent 70%),linear-gradient(#0e0e0d,#070606);font-family:Bitter,Georgia,serif}
+h1,h2,h3,.sec{font-family:Cinzel,Georgia,serif;font-weight:600}
+.sec{color:var(--cream);font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:.04em}
+button,.btn{font-family:Bitter,serif;border-radius:0;border:1px solid var(--gold);color:var(--cream);text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;font-weight:700}
+button:hover,.btn:hover{border-color:var(--gold2);background:#f2ede20d}
+.fill,.prim,button[aria-pressed="true"]{background:var(--cream);color:#121211;border-color:var(--cream)}
+.ltab{border:0;text-transform:none;letter-spacing:.04em;font-size:.88rem;color:var(--mute)}.ltab[aria-selected="true"]{color:var(--cream);border-bottom:2px solid var(--gold)}
+.tile,.arr{border-radius:0}
+.face{background:radial-gradient(circle at 50% 0,#2b2a28,#131312);border:1px solid #aca8a066;border-radius:0}.face::before{border-color:var(--gold)}.back{border-color:var(--gold2)}.card{border-radius:0}
+#disc path{stroke:var(--cream)}.dot{border-color:var(--cream)}
+.relic{background:radial-gradient(circle,#2b2a28,transparent 68%)}.dots2 i.on{background:var(--gold)}
+.glass{border-radius:0}input[type=number]{border-radius:0}
+.strip{position:relative;z-index:9;display:flex;justify-content:space-between;gap:12px;padding:7px 20px;background:#040403;color:var(--silver);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase}
+.strip span+span{display:none}
+.spot{position:fixed;top:0;left:6%;width:560px;max-width:90%;height:100vh;z-index:0;pointer-events:none;background:linear-gradient(rgba(247,241,230,.2),transparent 75%);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);filter:blur(16px)}
+.brand b{font:600 1rem Cinzel,serif;letter-spacing:.14em;color:var(--cream)}
+@media(min-width:760px){.strip{padding:7px 44px}.strip span+span{display:inline}header{grid-template-columns:1fr auto 1fr}nav{grid-area:1/1;justify-self:start}.brand{grid-area:1/2}.hdr-r{grid-area:1/3}.brand b{font-size:1.3rem}}
+.h2{position:relative;min-height:700px;padding-top:26px}
+.fl{position:absolute;width:80px;height:80px;color:var(--gold);opacity:.8}.fl.a{left:-8px;top:-4px}.fl.b{right:-8px;top:-4px;transform:scaleX(-1)}
+.tl,.tr{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;line-height:1.9;color:var(--silver)}
+.tl::after,.tr::after{content:"";display:block;width:32px;height:1px;background:var(--gold);margin-top:8px}.tr::after{margin-left:auto}
+.h2 .tl{position:absolute;left:0;top:70px}.h2 .tr{position:absolute;right:0;bottom:70px;text-align:right}
+.wm{position:relative;text-align:center;margin:70px 0 0;font:600 clamp(3rem,15.5vw,11.8rem)/1 Cinzel,serif;letter-spacing:.02em;background:linear-gradient(180deg,#efeadf 5%,#a5a29a 55%,#474542);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cert{position:absolute;left:50%;top:150px;width:min(290px,64vw);transform:translateX(-50%) rotate(-4deg);z-index:2;filter:drop-shadow(0 26px 34px #000000)}
+.h2 .cta{position:absolute;left:0;bottom:24px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;z-index:3}
+@media(max-width:759px){.h2{min-height:0}.h2 .tl,.h2 .tr,.h2 .cta{position:static}.h2 .tr{text-align:left;margin-top:10px}.h2 .tr::after{margin-left:0}.cert{position:relative;display:block;left:auto;top:auto;margin:-2px auto 0;transform:rotate(-3deg)}.wm{margin-top:34px}.h2 .tl{margin-top:14px}.h2 .cta{margin-top:18px}}
+.band{background:#040403;margin:24px -22px 0;padding:34px 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.bi{display:flex;gap:18px;align-items:center}
+.arch{flex:none;width:96px;aspect-ratio:3/4;border:1px solid var(--gold);border-radius:60px 60px 3px 3px;background:radial-gradient(circle at 50% 30%,#363533,#131312);display:grid;place-items:center;overflow:hidden}
+.arch svg{width:80%;height:80%;color:var(--gold2)}
+.bi h3{font-size:1.1rem;color:var(--cream);letter-spacing:.08em}.bi p{font-size:.82rem;color:var(--silver);margin:.2em 0 .2em}
+.lnk{border:0;padding:10px 0;min-height:44px;background:linear-gradient(var(--gold),var(--gold)) left bottom 10px/100% 1px no-repeat;color:var(--cream);font-size:.66rem}
+.ban{display:grid;grid-template-columns:1fr 1fr;margin-top:56px;border:1px solid var(--line);background:linear-gradient(100deg,#161514,#252423)}
+.bt{padding:40px 34px}.eb{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.ban h2{font-size:clamp(2rem,5vw,3.1rem);color:var(--cream);margin:.2em 0 .5em;line-height:1.05}
+.dl{list-style:none;padding:0;margin:0 0 16px}.dl li{position:relative;padding-left:22px;margin:6px 0;color:var(--silver);font-size:.92rem}.dl li::before{content:"";position:absolute;left:4px;top:.66em;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.bv{display:flex;gap:20px;align-items:flex-end;justify-content:center;padding:30px 20px;background:linear-gradient(100deg,transparent,#dbd6cc1f)}
+.bv figure{margin:0;text-align:center;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--silver)}.bv .arch{width:130px;margin-bottom:8px}
+@media(max-width:759px){.ban{grid-template-columns:1fr}.bt{padding:28px 22px}}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;padding:34px 0;border-bottom:1px solid var(--line)}
+.ti{display:flex;gap:14px;align-items:center}.ti .ic{width:38px;height:38px;color:var(--gold);flex:none;stroke-width:1.5}
+.ti b{display:block;font:700 .72rem Cinzel,serif;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}.ti span{font-size:.8rem;color:var(--silver)}
+.sub2{margin:70px 0 4px}
+.tline{display:grid;grid-template-columns:repeat(5,1fr);margin:22px 0}
+.tn{position:relative;padding:34px 10px 0;text-align:center}
+.tn::before{content:"";position:absolute;top:10px;left:50%;width:12px;height:12px;margin-left:-6px;background:var(--gold);transform:rotate(45deg)}
+.tn::after{content:"";position:absolute;top:15px;left:0;right:0;height:1px;background:var(--line);z-index:-1}
+.tn b{display:block;font:600 .8rem Cinzel,serif;letter-spacing:.1em;text-transform:uppercase;color:var(--cream)}.tn span{font-size:.82rem;color:var(--silver)}
+@media(max-width:759px){.tline{grid-template-columns:1fr}.tn{text-align:left;padding:0 0 22px 34px}.tn::before{top:4px;left:6px;margin:0}.tn::after{top:16px;left:11px;right:auto;width:1px;height:100%}}
+.case{display:grid;grid-template-columns:minmax(0,230px) 1fr;gap:34px;align-items:center;margin-top:20px}.case .arch{width:100%}
+@media(max-width:759px){.case{grid-template-columns:1fr}.case .arch{max-width:200px;margin:auto}}
+.glg{columns:2 320px;column-gap:40px;margin-top:14px}
+.gl{break-inside:avoid;border-bottom:1px solid var(--line)}.gl summary{cursor:pointer;list-style:none;font:600 1rem Cinzel,serif;letter-spacing:.06em;color:var(--cream);padding:12px 0;min-height:44px}
+.gl summary::-webkit-details-marker{display:none}.gl summary::before{content:"◆ ";color:var(--gold);font-size:.7em}.gl p{color:var(--silver);margin:0 0 12px;font-size:.92rem}
+.gl summary:focus-visible{outline:2px solid var(--teal)}
+.thx{margin-top:70px;padding:50px 0 10px;text-align:center;border-top:1px solid var(--line)}
+.thx h2{font-size:clamp(2.2rem,8vw,4.6rem);color:var(--cream);line-height:1.05;margin:0 0 .3em}.thx p{margin:0 auto 1em;max-width:46ch;color:var(--silver)}
+
+body{background:radial-gradient(900px 600px at 50% 16%,#2a2824,transparent 70%),linear-gradient(#141311,#0b0a09)!important}
+body::after{content:"";position:fixed;inset:0;z-index:49;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.55) 100%),repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px)}
+.grain{opacity:.16!important}
+img,svg{filter:grayscale(1) contrast(1.05) sepia(.12)}
+
+.cert{width:min(330px,70vw);top:130px;transform:translateX(-50%);filter:drop-shadow(0 22px 34px #000)}
+@media(max-width:759px){.cert{transform:none;margin:6px auto 0}}
+.card{min-height:340px}
+
+button.ib{cursor:pointer;padding:0;border:0;text-align:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;min-height:0}
+.ib:not(.relic){background:none;color:inherit}
+.ib:hover,.ib:focus-visible{background-color:transparent}
+.ib:focus-visible,.dl2:focus-visible,.cert:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+.bi>.ib{flex:none}.case>.ib{display:block;width:100%}
+.bv .ib{display:block;text-align:center}
+.ib .arch,.ib .ic{transition:border-color .2s,color .2s,filter .2s}
+.ib:hover .arch{border-color:var(--gold2)}.ib:hover .arch svg,.ib:hover .ic{color:var(--gold2)}
+.ib:hover .arch{filter:brightness(1.25)}
+.ti.ib{background:none;text-align:left;min-height:44px}.tx{display:block}.tx span{display:block}
+.ti.ib:hover b{color:var(--gold2)}
+.relic.ib{border-radius:50%}.relic.ib:hover{filter:brightness(1.3)}
+.dl2{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;color:#f2ede2}
+.dl2:hover .dots{color:var(--gold2)}
+.cert{cursor:pointer}.cert:hover{filter:drop-shadow(0 22px 34px #000) brightness(1.15)}
+@media(max-width:759px){.case>.ib{max-width:200px;margin:auto}}
+
+/* ===== abertura em 3D ===== */
+.h2{perspective:1400px;--mx:0;--my:0}
+.cert{transform-style:preserve-3d;transition:transform .25s ease-out;
+  transform:translateX(-50%) rotateY(calc(var(--mx)*14deg)) rotateX(calc(var(--my)*-10deg));
+  animation:certIn 1.6s cubic-bezier(.17,.84,.24,1) both,certSway 9s ease-in-out 1.6s infinite}
+@media(max-width:759px){.cert{transform:rotateY(calc(var(--mx)*14deg)) rotateX(calc(var(--my)*-10deg))}}
+@keyframes certIn{from{rotate:0 1 0 -110deg;scale:.55;opacity:0}60%{opacity:1}to{rotate:0 1 0 0deg;scale:1;opacity:1}}
+@keyframes certSway{0%,100%{rotate:0 1 0 -7deg}50%{rotate:0 1 0 7deg}}
+.ringtxt{transform-origin:160px 160px;animation:ringspin 70s linear infinite}
+@keyframes ringspin{to{transform:rotate(360deg)}}
+.wm{transform-origin:50% 100%;translate:calc(var(--mx)*-14px) calc(var(--my)*-8px);animation:wmIn 1.5s cubic-bezier(.17,.84,.24,1) .15s both}
+@keyframes wmIn{from{opacity:0;transform:translateZ(-420px) rotateX(48deg);letter-spacing:.22em}to{opacity:1;transform:none;letter-spacing:.02em}}
+.fl{translate:calc(var(--mx)*10px) calc(var(--my)*6px);animation:flIn 1.2s ease-out .9s both}
+@keyframes flIn{from{opacity:0;scale:.6}to{opacity:.8;scale:1}}
+.h2 .tl,.h2 .tr,.h2 .cta{animation:rise .9s ease-out both}
+.h2 .tl{animation-delay:.8s}.h2 .tr{animation-delay:1s}.h2 .cta{animation-delay:1.2s}
+@keyframes rise{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+.band,.ban,.trust{transform-origin:50% 0}
+.ib:hover .arch{transform:perspective(420px) rotateY(-16deg) rotateX(6deg)}
+.ib .arch{transition:transform .25s ease-out,border-color .2s,filter .2s}
+@media(prefers-reduced-motion:reduce){.cert,.wm,.fl,.ringtxt,.h2 .tl,.h2 .tr,.h2 .cta{animation:none!important;transition:none!important}.cert{rotate:none}}
+
+/* ===== topo reorganizado: nada sobreposto ===== */
+.ringtxt{animation:none!important}
+@keyframes certSway{0%,100%{rotate:0 1 0 -5deg}50%{rotate:0 1 0 5deg}}
+@keyframes flIn{from{opacity:0;scale:.6}to{opacity:.45;scale:1}}
+.fl{width:54px;height:54px}.fl.a{left:0;top:0}.fl.b{right:0;top:0}
+.wm2{text-align:center;font:600 clamp(.75rem,2vw,1.1rem) Cinzel,serif;letter-spacing:.7em;padding-left:.7em;text-transform:uppercase;color:var(--silver);margin:4px 0 0;animation:rise .9s ease-out .6s both}
+.h2 .cert{transform:rotateY(calc(var(--mx)*14deg)) rotateX(calc(var(--my)*-10deg))}
+@media(min-width:760px){
+ .h2{min-height:0;display:grid;grid-template-columns:1fr auto 1fr;grid-template-areas:"wm wm wm" "sub sub sub" "tl cert tr" "cta cta cta";align-items:center;column-gap:28px;padding:34px 0 24px}
+ .h2 .wm{grid-area:wm;margin:24px 0 0;font-size:clamp(3rem,11.5vw,9.4rem)}
+ .h2 .wm2{grid-area:sub}
+ .h2 .cert{grid-area:cert;position:relative;left:auto;top:auto;width:min(290px,30vw);margin:34px 0 0;justify-self:center}
+ .h2 .tl{grid-area:tl;position:static;margin-top:34px}
+ .h2 .tr{grid-area:tr;position:static;justify-self:end;margin-top:34px}
+ .h2 .cta{grid-area:cta;position:static;justify-content:center;margin-top:34px}
+}
+@media(max-width:759px){.wm2{margin-top:2px}.h2 .cert{width:min(240px,64vw);margin:22px auto 0}.h2 .tl,.h2 .tr{text-align:center}.h2 .tl::after,.h2 .tr::after{margin-left:auto;margin-right:auto}.h2 .cta{justify-content:center}}
+
+/* perspectiva própria (sem deslocar o layout) */
+@property --sw{syntax:"<angle>";inherits:false;initial-value:0deg}
+.h2{perspective:none}
+.h2 .cert{transition:none;transform:perspective(900px) rotateY(calc(var(--mx)*14deg + var(--sw))) rotateX(calc(var(--my)*-10deg));animation:certIn2 1.6s cubic-bezier(.17,.84,.24,1) both,certSway2 9s ease-in-out 1.6s infinite}
+@keyframes certIn2{from{--sw:-110deg;scale:.55;opacity:0}60%{opacity:1}to{--sw:0deg;scale:1;opacity:1}}
+@keyframes certSway2{0%,100%{--sw:-5deg}50%{--sw:5deg}}
+.wm{animation-name:wmIn2}
+@keyframes wmIn2{from{opacity:0;transform:perspective(900px) translateZ(-420px) rotateX(48deg);letter-spacing:.22em}to{opacity:1;transform:perspective(900px);letter-spacing:.02em}}
+.h2 .cert{top:auto;left:auto}
+.case>*,.lpan>*,.ban>*,.lab>*{min-width:0}
+@media(max-width:759px){.case,.lpan{grid-template-columns:minmax(0,1fr)}}
+html,body{overflow-x:clip}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-eye" viewBox="0 0 48 48"><path d="M4 24C10 14 18 10 24 10s14 4 20 14c-6 10-14 14-20 14S10 34 4 24z"/><circle cx="24" cy="24" r="6"/><circle cx="24" cy="24" r="1.5" fill="currentColor"/></symbol>
+<symbol id="i-sun" viewBox="0 0 48 48"><circle cx="24" cy="24" r="9"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/></symbol>
+<symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 5l16 6v12c0 10-7 17-16 20C15 40 8 33 8 23V11z"/><path d="M17 22h14M24 15v16"/></symbol>
+<symbol id="i-seal" viewBox="0 0 48 48"><rect x="11" y="21" width="26" height="20" rx="4"/><path d="M16 21v-5a8 8 0 0116 0v5M24 28v6"/></symbol>
+<symbol id="i-key" viewBox="0 0 48 48"><circle cx="16" cy="24" r="8"/><path d="M24 24h18M36 24v7M42 24v5"/></symbol>
+<symbol id="i-crown" viewBox="0 0 48 48"><path d="M6 36L5 16l11 10 8-14 8 14 11-10-1 20zM6 42h36"/></symbol>
+<symbol id="i-scales" viewBox="0 0 48 48"><path d="M24 6v34M12 40h24M8 16h32M8 16l-5 12a6 6 0 0010 0zM40 16l-5 12a6 6 0 0010 0z"/></symbol>
+<symbol id="i-book" viewBox="0 0 48 48"><path d="M8 8h14a4 4 0 014 4v28a4 4 0 00-4-4H8zM40 8H26M40 8v28H30a4 4 0 00-4 4"/></symbol>
+<symbol id="i-cards" viewBox="0 0 48 48"><rect x="8" y="12" width="26" height="30" rx="4"/><path d="M14 8h26a2 2 0 012 2v26"/></symbol>
+<symbol id="i-orb" viewBox="0 0 48 48"><circle cx="24" cy="22" r="14"/><path d="M14 40h20M18 36h12M18 18a8 8 0 016-4"/></symbol>
+<symbol id="i-flask" viewBox="0 0 48 48"><path d="M19 6h10M21 6v12L9 40h30L27 18V6"/><path d="M14 32h20"/></symbol>
+</svg>
+
+<div class="strip"><span>Companhia fechada · ações fora da bolsa</span><span>Lei nº 6.404/1976 · Código Civil, arts. 1.088 e 1.089</span></div>
+<header>
+  <nav id="tabs" aria-label="Seções"><a href="#trilha">Trilha</a><a href="#cartas">Cartas</a><a href="#oraculo">Oráculo</a><a href="#oficina">Oficina</a></nav>
+  <a class="brand" href="#trilha"><svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="currentColor">S·A</text></svg><b>S.A. FECHADA</b></a>
+  <div class="hdr-r"><a class="ul" href="#cartas">Praticar</a><a class="dl2" href="#oficina" aria-label="Ir à Oficina"><svg class="dots" viewBox="0 0 16 16" aria-hidden="true"><g fill="currentColor"><circle cx="2" cy="2" r="1.4"/><circle cx="8" cy="2" r="1.4"/><circle cx="14" cy="2" r="1.4"/><circle cx="2" cy="8" r="1.4"/><circle cx="8" cy="8" r="1.4"/><circle cx="14" cy="8" r="1.4"/><circle cx="2" cy="14" r="1.4"/><circle cx="8" cy="14" r="1.4"/><circle cx="14" cy="14" r="1.4"/></g></svg></a></div>
+</header>
+<div class="lines" aria-hidden="true"></div>
+<div class="spot" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<main>
+<section id="v-trilha" class="view">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="flo" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6v30c0 14 10 24 24 24M6 6h30c14 0 24 10 24 24"/><path d="M14 14v18c0 8 6 14 14 14M14 14h18c8 0 14 6 14 14"/><circle cx="30" cy="30" r="5"/><path d="M6 6c10 2 14 8 14 16M6 6c2 10 8 14 16 14"/></g><path d="M44 46c8-2 14 2 16 10-8 2-14-2-16-10zM46 44c-2 8 2 14 10 16" fill="currentColor" opacity=".6"/></symbol>
+<symbol id="il-table" viewBox="0 0 120 120"><circle cx="60" cy="60" r="30" fill="#2b2a28"/><circle cx="60" cy="60" r="22"/><circle cx="104" cy="60" r="8" fill="#44423f"/><circle cx="74" cy="102" r="8" fill="#44423f"/><circle cx="24" cy="86" r="8" fill="#44423f"/><circle cx="24" cy="34" r="8" fill="#44423f"/><circle cx="74" cy="18" r="8" fill="#44423f"/><path d="M52 50h10v14H52zM66 56h10v12H66z" fill="#e5e0d6" stroke="none"/><circle cx="60" cy="60" r="4" fill="currentColor" stroke="none"/></symbol>
+<symbol id="il-compass" viewBox="0 0 120 120"><circle cx="60" cy="60" r="36"/><circle cx="60" cy="60" r="30" opacity=".5"/><path d="M60 24v6M60 90v6M24 60h6M90 60h6"/><path d="M60 32l9 28H51z" fill="currentColor"/><path d="M60 88l9-28H51z" fill="#e5e0d6" stroke="none" opacity=".8"/><circle cx="60" cy="60" r="3" fill="#131312" stroke="none"/></symbol>
+<symbol id="il-case" viewBox="0 0 120 120"><rect x="26" y="44" width="68" height="46" rx="5" fill="#2b2a28"/><path d="M48 44v-9h24v9M26 64h68"/><rect x="54" y="60" width="12" height="9" rx="2" fill="currentColor"/></symbol>
+<symbol id="il-door" viewBox="0 0 120 120"><path d="M32 104V54a28 28 0 0156 0v50z" fill="#2b2a28"/><path d="M42 104V56a18 18 0 0136 0v48M60 38v66" opacity=".6"/><rect x="48" y="72" width="24" height="18" rx="3" fill="currentColor"/><path d="M53 72v-6a7 7 0 0114 0v6"/><circle cx="60" cy="81" r="2.5" fill="#131312" stroke="none"/><path d="M24 104h72"/></symbol>
+<symbol id="il-bourse" viewBox="0 0 120 120"><path d="M22 52L60 30l38 22z" fill="#2b2a28"/><path d="M30 56v36M45 56v36M60 56v36M75 56v36M90 56v36M24 94h72M20 102h80"/><path d="M28 22l14-8 10 6 16-12" stroke="#c7c3ba"/></symbol>
+<symbol id="il-book" viewBox="0 0 120 120"><rect x="30" y="22" width="60" height="78" rx="3" fill="#2b2a28"/><path d="M38 22v78M46 40h36M46 50h30M46 60h34"/><path d="M76 100v14l7-5 7 5v-14" fill="#363533"/></symbol>
+</defs></svg>
+
+<div class="h2">
+  <svg class="fl a" aria-hidden="true"><use href="#flo"/></svg><svg class="fl b" aria-hidden="true"><use href="#flo"/></svg>
+  <p class="tl">Uma companhia<br>de capital<br>e portas fechadas.</p>
+  <h1 class="wm">Sociedade <span class="sr">Anônima Fechada</span></h1>
+  <p class="wm2" aria-hidden="true">Anônima Fechada</p>
+  <svg class="cert" viewBox="0 0 320 320" role="link" tabindex="0" aria-label="Abrir a Oficina: disco com 8 ações e cadeado">
+    <defs><path id="ringp" d="M32 160a128 128 0 1 1 256 0a128 128 0 1 1-256 0"/></defs>
+    <circle cx="160" cy="160" r="152" fill="#0e0e0d" stroke="#aca8a0" stroke-width="1.5"/>
+    <circle cx="160" cy="160" r="144" fill="none" stroke="#aca8a0" stroke-opacity=".5"/>
+    <circle cx="160" cy="160" r="118" fill="none" stroke="#aca8a0" stroke-opacity=".5"/>
+    <g class="ringtxt"><text font-family="Cinzel,serif" font-size="12" font-weight="600" fill="#e5e0d6" letter-spacing="3"><textPath href="#ringp" textLength="790" lengthAdjust="spacing">SOCIEDADE ANÔNIMA ◆ COMPANHIA FECHADA ◆ AÇÕES FORA DA BOLSA ◆</textPath></text></g>
+    <g stroke="#e5e0d6" stroke-width="1.5" stroke-linejoin="round"><path d="M160 160L160.0 56.0 A104 104 0 0 1 233.5 86.5 Z" fill="#9a968e"/><path d="M160 160L233.5 86.5 A104 104 0 0 1 264.0 160.0 Z" fill="#9a968e"/><path d="M160 160L264.0 160.0 A104 104 0 0 1 233.5 233.5 Z" fill="#2b2a28"/><path d="M160 160L233.5 233.5 A104 104 0 0 1 160.0 264.0 Z" fill="#44423f"/><path d="M160 160L160.0 264.0 A104 104 0 0 1 86.5 233.5 Z" fill="#6f6c67"/><path d="M160 160L86.5 233.5 A104 104 0 0 1 56.0 160.0 Z" fill="#44423f"/><path d="M160 160L56.0 160.0 A104 104 0 0 1 86.5 86.5 Z" fill="#2b2a28"/><path d="M160 160L86.5 86.5 A104 104 0 0 1 160.0 56.0 Z" fill="#44423f"/></g>
+    <circle cx="160" cy="160" r="36" fill="#131312" stroke="#d2cec4" stroke-width="2"/>
+    <g fill="none" stroke="#e5e0d6" stroke-width="3" stroke-linecap="round"><path d="M150 156v-6a10 10 0 0 1 20 0v6"/></g>
+    <rect x="145" y="155" width="30" height="22" rx="3" fill="#e5e0d6"/><circle cx="160" cy="165" r="3" fill="#131312"/><path d="M160 166v6" stroke="#131312" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <p class="tr">Lei nº<br>6.404/1976</p>
+  <div class="cta"><button class="btn fill" data-l="0">Começar a trilha</button><a class="more" href="#cartas">Ir às cartas</a></div>
+</div>
+
+<div class="band">
+  <div class="bi"><button class="ib" data-l="5" aria-label="Ver na trilha: Assembleia geral"><span class="arch"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#il-table"/></svg></span></button><div><h3>Assembleia geral</h3><p>Todos os acionistas reunidos à mesa para decidir.</p><button class="lnk" data-l="5">Ver na trilha →</button></div></div>
+  <div class="bi"><button class="ib" data-l="5" aria-label="Ver na trilha: Conselho"><span class="arch"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#il-compass"/></svg></span></button><div><h3>Conselho</h3><p>Define a direção da empresa. Opcional na fechada.</p><button class="lnk" data-l="5">Ver na trilha →</button></div></div>
+  <div class="bi"><button class="ib" data-l="5" aria-label="Ver na trilha: Diretoria"><span class="arch"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#il-case"/></svg></span></button><div><h3>Diretoria</h3><p>Cuida do dia a dia e representa a companhia.</p><button class="lnk" data-l="5">Ver na trilha →</button></div></div>
+</div>
+
+<div class="ban">
+  <div class="bt"><p class="eb">A grande diferença</p><h2>Fechada<br>ou aberta?</h2>
+    <ul class="dl"><li>Fechada: ações fora da bolsa e poucos acionistas.</li><li>Aberta: ações negociadas na bolsa e fiscalização da CVM.</li><li>O estatuto da fechada pode regular a venda das ações.</li></ul>
+    <button class="btn fill" data-l="2">Ver o comparativo</button></div>
+  <div class="bv"><figure><button class="ib" data-l="2" aria-label="Ver na trilha: Fechada"><span class="arch"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#il-door"/></svg></span>Fechada</button></figure>
+    <figure><button class="ib" data-l="2" aria-label="Ver na trilha: Aberta"><span class="arch"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#il-bourse"/></svg></span>Aberta</button></figure></div>
+</div>
+
+<div class="trust">
+  <button class="ti ib" data-l="1" aria-label="Ver na trilha: Risco limitado"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span class="tx"><b>Risco limitado</b><span>Responde pelo preço das ações</span></span></button>
+  <button class="ti ib" data-l="4" aria-label="Ver na trilha: Registro na Junta"><svg class="ic" aria-hidden="true"><use href="#i-seal"/></svg><span class="tx"><b>Registro na Junta</b><span>Nasce com o arquivamento</span></span></button>
+  <button class="ti ib" data-l="4" aria-label="Ver na trilha: Estatuto próprio"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><span class="tx"><b>Estatuto próprio</b><span>As regras da companhia</span></span></button>
+  <button class="ti ib" data-l="6" aria-label="Ver na trilha: Lei 6.404/1976"><svg class="ic" aria-hidden="true"><use href="#i-scales"/></svg><span class="tx"><b>Lei 6.404/1976</b><span>A lei das sociedades por ações</span></span></button>
+</div>
+
+<div id="licoes" class="licoes">
+  <h2 class="sec">Conceitos gerais</h2>
+  <div class="ltabs" id="ltabs" role="tablist" aria-label="Lições"></div>
+  <div id="lpan" class="lpan" aria-live="polite"></div>
+</div>
+
+<h2 class="sec sub2">A vida de uma S.A. fechada</h2>
+<div class="tline">
+  <div class="tn"><b>Fundação</b><span>Os fundadores subscrevem o capital e escrevem o estatuto.</span></div>
+  <div class="tn"><b>Registro</b><span>Arquivamento na Junta Comercial: nasce a pessoa jurídica.</span></div>
+  <div class="tn"><b>Operação</b><span>A diretoria toca o dia a dia e representa a companhia.</span></div>
+  <div class="tn"><b>Assembleia anual</b><span>Nos 4 primeiros meses após o fim do exercício, aprovam as contas, decidem o destino do lucro e elegem administradores.</span></div>
+  <div class="tn"><b>Dividendos</b><span>Parte do lucro é distribuída aos acionistas.</span></div>
+</div>
+
+<h2 class="sec sub2">Caso prático: Livraria Delphos S.A.</h2>
+<div class="case">
+  <button class="ib" data-l="0" aria-label="Ver na trilha: Capital e ações"><span class="arch"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#il-book"/></svg></span></button>
+  <div>
+    <p>Uma livraria de família virou companhia fechada, com capital dividido em 1.000 ações ordinárias. Veja quem tem o quê e quanto cada um recebe se o lucro do ano for de R$ 80.000 e o estatuto não disser nada sobre dividendos (metade do lucro vai para os acionistas).</p>
+    <div class="tw"><table><tr><th>Acionista</th><th>Ações</th><th>Participação</th><th>Dividendo</th></tr><tr><td>Yasmin</td><td>600</td><td>60%</td><td>R$ 24.000</td></tr><tr><td>Isabele</td><td>250</td><td>25%</td><td>R$ 10.000</td></tr><tr><td>Melissa</td><td>150</td><td>15%</td><td>R$ 6.000</td></tr></table></div>
+    <ul class="dl" style="margin-top:14px"><li>Yasmin tem mais da metade das ações com voto, então vence sozinha as votações comuns.</li><li>Se Melissa quiser vender suas ações, o estatuto da fechada pode criar regras para isso, como dar preferência aos demais acionistas, sem impedir a venda.</li><li>Se a livraria tiver dívidas, cada acionista responde, em regra, só pelo preço das ações que subscreveu.</li></ul>
+  </div>
+</div>
+
+<h2 class="sec sub2">Glossário</h2>
+<div class="glg">
+  <details class="gl"><summary>Ação</summary><p>Cada parte igual em que o capital é dividido.</p></details>
+  <details class="gl"><summary>Acionista</summary><p>Quem é titular de ações da companhia.</p></details>
+  <details class="gl"><summary>Estatuto social</summary><p>O conjunto de regras da S.A.</p></details>
+  <details class="gl"><summary>Subscrição</summary><p>Compromisso de adquirir certa quantidade de ações.</p></details>
+  <details class="gl"><summary>Dividendo</summary><p>Parte do lucro distribuída aos acionistas.</p></details>
+  <details class="gl"><summary>Assembleia geral</summary><p>Reunião dos acionistas para decidir os grandes temas.</p></details>
+  <details class="gl"><summary>Diretoria</summary><p>Órgão obrigatório que administra e representa a companhia.</p></details>
+  <details class="gl"><summary>Junta Comercial</summary><p>Órgão onde se registram os atos de criação da companhia.</p></details>
+  <details class="gl"><summary>Denominação</summary><p>O nome da S.A., que traz “companhia” ou “sociedade anônima” (por extenso ou abreviado).</p></details>
+  <details class="gl"><summary>Livro de registro de ações</summary><p>Onde ficam anotados os acionistas, suas ações e as transferências.</p></details>
+</div>
+
+<div class="thx"><h2>Pronto para testar?</h2><p>Fixe o conteúdo nas cartas e confirme o que aprendeu no Oráculo.</p><a class="btn fill" href="#cartas">Abrir as cartas</a> <a class="btn" href="#oraculo">Ir ao Oráculo</a></div>
+</section>
+
+<section id="v-cartas" class="view" hidden>
+  <h2>Cartas de estudo</h2>
+  <div class="row"><span id="cProg" aria-live="polite"></span><div class="meter" aria-hidden="true"><i id="cMeter"></i></div></div>
+  <div class="row"><button id="cShuf">Embaralhar</button><button id="cOnly" aria-pressed="false">Só revisar</button><button id="cRes">Recomeçar</button></div>
+  <div class="deck">
+    <div class="card" id="card" role="button" tabindex="0">
+      <div class="face"><span class="tag" id="cTag"></span><p id="cQ"></p><small>Toque para virar</small></div>
+      <div class="face back"><span class="tag" style="color:var(--teal)">Resposta</span><p id="cA"></p></div>
+    </div>
+  </div>
+  <div class="acts"><button id="cRev">Revisar depois</button><button id="cOk" class="prim">Já sei</button></div>
+  <p class="src" style="text-align:center">Atalhos no PC: espaço vira, ← → navegam, 1 revisar, 2 já sei.</p>
+</section>
+
+<section id="v-oraculo" class="view" hidden>
+  <h2>O Oráculo</h2>
+  <p id="score" class="glass" aria-live="polite"></p>
+  <div id="quiz"></div>
+</section>
+
+<section id="v-oficina" class="view" hidden>
+  <h2>A Oficina</h2>
+  <p>Toque nas partes do disco para entregar ações a cada acionista.</p>
+  <div class="lab">
+    <svg id="disc" viewBox="0 0 300 300" role="group" aria-label="Disco com 8 ações"></svg>
+    <div><ul class="legend" id="legend"></ul><p id="msg" class="glass" aria-live="polite"></p><button id="reset">Limpar o disco</button></div>
+  </div>
+  <div class="glass" style="margin-top:22px"><h3 style="font-size:1.5rem;margin:0 0 6px">Simulador de dividendos</h3>
+    <p>Se o estatuto for omisso, a lei manda distribuir metade do lucro líquido ajustado (simplificado: ignora reservas e outros ajustes).</p>
+    <label>Lucro anual (R$) <input id="lucro" type="number" min="0" step="1000" value="80000"></label><label>Ações de Yasmin: <b id="nA">2</b> de 8 <input id="aA" type="range" min="0" max="8" value="2"></label>
+    <p id="divOut" aria-live="polite" style="margin-bottom:0"></p></div>
+</section>
+</main>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)},NS="http://www.w3.org/2000/svg";
+  var V=["trilha","cartas","oraculo","oficina"];
+  function show(h){if(V.indexOf(h)<0)h="trilha";
+    V.forEach(function(v){$("v-"+v).hidden=v!==h});
+    document.querySelectorAll("#tabs a").forEach(function(a){a.setAttribute("aria-current",a.getAttribute("href")==="#"+h?"page":"false")});window.scrollTo(0,0)}
+  function go(h){try{history.replaceState(null,"","#"+h)}catch(e){}show(h)}
+  function route(){show((location.hash||"#trilha").slice(1))}
+  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var h=a.getAttribute("href").slice(1);if(V.indexOf(h)<0)return;e.preventDefault();go(h)});
+  addEventListener("hashchange",route);route();
+
+    /* Lições */
+  var L=[
+    {t:"Disco",h:"Capital e ações",i:"sun",a:"O capital é cortado em partes iguais: as ações.",b:"<p>Quem é titular de ações é <b>acionista</b>. Quanto mais ações, maior a fatia nos lucros e nas decisões.</p><p>Experimente o disco na aba Oficina.</p>"},
+    {t:"Escudo",h:"Risco limitado",i:"shield",a:"O acionista não responde pelas dívidas da empresa com todo o seu patrimônio.",b:"<p>Em regra, responde só pelo preço das ações que subscreveu ou adquiriu (Código Civil, art. 1.088).</p><p>Exceção: em casos de abuso, pode haver desconsideração da personalidade jurídica.</p>"},
+    {t:"Selo",h:"Fechada x aberta",i:"seal",a:"Fechada é a companhia cujas ações não vão à bolsa.",b:"<p><b>Fechada:</b> poucos acionistas conhecidos e regras mais simples. O estatuto pode criar regras para a venda das ações, sem impedir a negociação.</p><p><b>Aberta:</b> ações na bolsa, fiscalização da CVM, divulgação frequente e muito capital captado.</p>"},
+    {t:"Olho",h:"Ações e direitos",i:"eye",a:"Nem toda ação é igual, e cada acionista tem direitos.",b:"<ul><li><b>Ordinária:</b> dá direito a voto.</li><li><b>Preferencial:</b> vantagem financeira; voto restrito ou nenhum (limite de 50% do total).</li></ul><p>Direitos: votar, receber dividendos (estatuto omisso: metade do lucro líquido ajustado), fiscalizar, ter preferência em novas ações e se retirar em casos previstos em lei.</p>"},
+    {t:"Chave",h:"Como nasce",i:"key",a:"Cinco passos até a S.A. existir como pessoa jurídica.",b:"<ol><li>Reunir ao menos 2 acionistas.</li><li>Escrever o estatuto e subscrever o capital.</li><li>Pagar a entrada: 10% do preço de emissão, se em dinheiro, em banco.</li><li>Constituir por assembleia ou escritura pública.</li><li>Registrar na Junta Comercial.</li></ol>"},
+    {t:"Trono",h:"Quem governa",i:"crown",a:"Três níveis de decisão, do mais amplo ao mais prático.",b:"<ul><li><b>Assembleia geral:</b> todos os acionistas; decide os grandes temas.</li><li><b>Conselho de administração:</b> define a direção geral; opcional na fechada.</li><li><b>Diretoria:</b> dia a dia e representação; obrigatória.</li></ul>"},
+    {t:"Balança",h:"S.A. x Ltda.",i:"scales",a:"As duas limitam o risco dos sócios, mas funcionam de modos diferentes.",b:'<div class="tw"><table><tr><th></th><th>S.A. fechada</th><th>Ltda.</th></tr><tr><th>Capital</th><td>Ações</td><td>Quotas</td></tr><tr><th>Sócios</th><td>Mín. 2 em regra</td><td>Pode ter 1 (SLU)</td></tr><tr><th>Lei</th><td>Lei 6.404/1976</td><td>Código Civil</td></tr><tr><th>Criação</th><td>Estatuto</td><td>Contrato social</td></tr><tr><th>Gestão</th><td>Diretoria obrigatória</td><td>Administradores no contrato</td></tr></table></div>'}
+  ];
+  var cur=0,ltabs=$("ltabs"),lpan=$("lpan");
+  L.forEach(function(l,i){var b=document.createElement("button");b.className="ltab";b.setAttribute("role","tab");b.textContent=l.t;b.onclick=function(){setL(i)};ltabs.appendChild(b)});
+  function setL(i){
+    cur=(i+L.length)%L.length;var l=L[cur];
+    [].forEach.call(ltabs.children,function(b,k){b.setAttribute("aria-selected",k===cur?"true":"false")});
+    lpan.innerHTML='<div class="pl"><h3>'+l.h+'</h3><p>'+l.a+'</p><a class="btn" href="#cartas">Praticar nas cartas</a></div>'
+      +'<button class="relic ib" id="lr" aria-label="Próxima lição"><svg class="ic" aria-hidden="true"><use href="#i-'+l.i+'"/></svg></button>'
+      +'<div class="pr"><div class="nav2"><button class="arr" id="lp" aria-label="Lição anterior">‹</button><span>Lição '+(cur+1)+' de '+L.length+'</span><button class="arr" id="ln" aria-label="Próxima lição">›</button></div>'
+      +'<div class="dots2" aria-hidden="true">'+L.map(function(_,k){return "<i"+(k===cur?' class="on"':"")+"></i>"}).join("")+'</div><div class="det">'+l.b+'</div></div>';
+    $("lr").onclick=function(){setL(cur+1)};$("lp").onclick=function(){setL(cur-1)};$("ln").onclick=function(){setL(cur+1)};
+  }
+  setL(0);
+  if($("tiles"))[0,1,2].forEach(function(i){var b=document.createElement("button");b.className="tile";
+    b.innerHTML='<svg class="ic" aria-hidden="true"><use href="#i-'+L[i].i+'"/></svg><span>'+L[i].t+'</span>';
+    b.onclick=function(){setL(i);$("licoes").scrollIntoView({behavior:"smooth"})};if($("tiles"))$("tiles").appendChild(b)});
+
+  document.querySelectorAll("[data-l]").forEach(function(b){b.addEventListener("click",function(){setL(+b.getAttribute("data-l"));$("licoes").scrollIntoView({behavior:"smooth"})})});
+  var em=document.querySelector(".cert");
+  if(em){em.addEventListener("click",function(){go("oficina")});em.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go("oficina")}})}
+  /* tilt 3D do topo */
+  (function(){var h=document.querySelector(".h2");if(!h||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+    var tx=0,ty=0,cx=0,cy=0,raf=0;
+    function loop(){cx+=(tx-cx)*.1;cy+=(ty-cy)*.1;h.style.setProperty("--mx",cx.toFixed(3));h.style.setProperty("--my",cy.toFixed(3));raf=(Math.abs(tx-cx)>.002||Math.abs(ty-cy)>.002)?requestAnimationFrame(loop):0}
+    function aim(x,y){tx=x;ty=y;if(!raf)raf=requestAnimationFrame(loop)}
+    addEventListener("pointermove",function(e){aim((e.clientX/innerWidth-.5)*2,(e.clientY/innerHeight-.5)*2)},{passive:true});
+    addEventListener("deviceorientation",function(e){if(e.gamma==null)return;aim(Math.max(-1,Math.min(1,e.gamma/30)),Math.max(-1,Math.min(1,(e.beta-45)/30)))},{passive:true})})();
+  /* Cartas */
+  var cards=[["Conceito","O que é uma sociedade anônima (S.A.)?","Sociedade empresária cujo capital é dividido em ações. Cada acionista responde apenas pelo preço das ações que subscreveu ou adquiriu."],
+  ["Conceito","O que é uma ação?","Cada uma das partes iguais em que o capital da companhia é dividido."],
+  ["Conceito","Quem é o acionista?","A pessoa, física ou jurídica, titular de ações da companhia."],
+  ["Conceito","O que torna a S.A. “fechada”?","Suas ações não são negociadas na bolsa nem no mercado aberto ao público. Poucos acionistas, em geral conhecidos."],
+  ["Conceito","Qual é a lei principal das S.A.?","A Lei nº 6.404/1976. O Código Civil (arts. 1.088 e 1.089) vale nos casos omissos."],
+  ["Estrutura","Qual é, em regra, o número mínimo de acionistas?","Dois. A exceção é a subsidiária integral, com um só acionista (outra S.A.)."],
+  ["Estrutura","Qual é o documento com as regras da S.A.?","O estatuto social."],
+  ["Estrutura","O conselho de administração é obrigatório na S.A. fechada?","Não, é opcional. A diretoria, sim, é obrigatória."],
+  ["Estrutura","Quem decide os grandes temas da companhia?","A assembleia geral, reunião de todos os acionistas."],
+  ["Ações","O que é uma ação ordinária?","A que dá direito a voto nas assembleias."],
+  ["Ações","O que é uma ação preferencial?","A que traz vantagens financeiras, mas pode ter voto restrito ou nenhum. As sem voto ou com voto restrito vão até 50% do total."],
+  ["Criação","O que é subscrever ações?","Comprometer-se a adquirir certa quantidade de ações do capital."],
+  ["Criação","Qual a entrada mínima, se o pagamento for em dinheiro?","10% do preço de emissão das ações, depositado em banco autorizado."],
+  ["Criação","Quando a S.A. passa a existir como pessoa jurídica?","Com o registro (arquivamento dos atos constitutivos) na Junta Comercial."],
+  ["Direitos","O que é dividendo? E se o estatuto for omisso?","Parte do lucro distribuída aos acionistas. Se o estatuto for omisso, a lei manda distribuir metade do lucro líquido ajustado."],
+  ["Direitos","O que é o direito de retirada (recesso)?","Em casos previstos em lei, quem discorda de certas decisões da maioria pode sair e receber o valor de suas ações."],
+  ["Conceito","Como a S.A. se identifica no nome empresarial?","Por uma denominação com “companhia” ou “sociedade anônima”, por extenso ou abreviada (S.A. ou Cia.). “Companhia” não pode ficar no final do nome."],
+  ["Estrutura","Quantos diretores a diretoria deve ter?","Dois ou mais, eleitos pelo conselho de administração ou, se não houver conselho, pela assembleia geral."],
+  ["Direitos","Quem recebe dividendos primeiro: ordinária ou preferencial?","Em regra, a preferencial, quando o estatuto lhe dá prioridade no recebimento dos dividendos."],
+  ["Conceito","A companhia fechada tem os mesmos deveres de registro e divulgação na CVM que a aberta?","Não. Essas exigências são da companhia aberta."],
+  ["Estrutura","O que é o livro de registro de ações nominativas?","Livro societário em que se registram os acionistas, o número de ações e as transferências."],
+  ["Estrutura","Quando é a assembleia geral ordinária?","Uma vez por ano, nos 4 primeiros meses seguintes ao fim do exercício social."],
+  ["Estrutura","Para que serve a assembleia geral ordinária?","Aprovar as contas, decidir o destino do lucro (inclusive dividendos) e eleger administradores."]];
+  var st={},base=cards.map(function(_,i){return i}),order=[],pos=0,only=false,card=$("card");
+  try{st=JSON.parse(localStorage.getItem("saf-cards")||"{}")}catch(e){}
+  function save(){try{localStorage.setItem("saf-cards",JSON.stringify(st))}catch(e){}}
+  function render(){
+    order=base.filter(function(i){return !only||st[i]!==1});if(pos>=order.length)pos=0;
+    var k=cards.filter(function(_,i){return st[i]===1}).length;
+    $("cProg").textContent=k+" de "+cards.length+" dominadas";$("cMeter").style.width=(100*k/cards.length)+"%";
+    card.classList.remove("flip");
+    if(!order.length){$("cTag").textContent="Missão cumprida";$("cQ").textContent="Você dominou todas as cartas!";$("cA").textContent="Toque em Recomeçar para treinar de novo.";return}
+    var c=cards[order[pos]];$("cTag").textContent=c[0]+" · "+(pos+1)+"/"+order.length;$("cQ").textContent=c[1];$("cA").textContent=c[2];
+    card.setAttribute("aria-label","Carta: "+c[1]+". Ative para virar.");
+  }
+  function flip(){card.classList.toggle("flip")}
+  function mark(v){if(!order.length)return;st[order[pos]]=v;save();if(only&&v===1){render()}else{pos=(pos+1)%order.length;render()}}
+  function move(d){if(order.length){pos=(pos+d+order.length)%order.length;render()}}
+  card.onclick=flip;
+  $("cOk").onclick=function(){mark(1)};$("cRev").onclick=function(){mark(2)};
+  $("cShuf").onclick=function(){for(var i=base.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=base[i];base[i]=base[j];base[j]=t}pos=0;render()};
+  $("cOnly").onclick=function(){only=!only;this.setAttribute("aria-pressed",only);pos=0;render()};
+  $("cRes").onclick=function(){st={};save();pos=0;render()};
+  addEventListener("keydown",function(e){
+    if(V.some(function(v){return !$("v-"+v).hidden&&v==="cartas"})===false||/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;
+    if(e.key===" "||e.key==="Enter"){if(document.activeElement===card){e.preventDefault();flip()}}
+    else if(e.key==="ArrowRight")move(1);else if(e.key==="ArrowLeft")move(-1);else if(e.key==="1")mark(2);else if(e.key==="2")mark(1)});
+  render();
+
+  /* Oráculo */
+  var qs=[
+    {t:"Na S.A. fechada, as ações são vendidas ao público na bolsa de valores.",a:false,e:"Falso. Justamente por não irem à bolsa ela é fechada."},
+    {t:"Em regra, o acionista responde só pelo preço das ações que subscreveu ou comprou.",a:true,e:"Verdadeiro. É o risco limitado (art. 1.088 do Código Civil)."},
+    {t:"A diretoria é um órgão obrigatório da S.A.",a:true,e:"Verdadeiro. Já o conselho de administração é opcional nas fechadas."},
+    {t:"A S.A. fechada é obrigada a ter conselho de administração.",a:false,e:"Falso. Nas fechadas o conselho é opcional."},
+    {t:"Ações preferenciais sempre dão direito a voto pleno.",a:false,e:"Falso. Dão vantagens financeiras e podem ter voto restrito ou nenhum."},
+    {t:"A S.A. só existe como pessoa jurídica depois do registro na Junta Comercial.",a:true,e:"Verdadeiro. O registro é o último passo da criação."},
+    {t:"Na Ltda., o capital é dividido em ações.",a:false,e:"Falso. Na Ltda. o capital é dividido em quotas."},
+    {t:"Em regra, uma S.A. precisa de pelo menos 2 acionistas.",a:true,e:"Verdadeiro. A exceção é a subsidiária integral."},
+    {t:"O nome de uma S.A. deve trazer “companhia” ou “sociedade anônima”.",a:true,e:"Verdadeiro, por extenso ou abreviado. Mas “companhia” não pode ficar no final do nome."},
+    {t:"A diretoria da S.A. pode ter um único diretor.",a:false,e:"Falso. A diretoria é composta por dois ou mais diretores."},
+    {t:"A fechada tem os mesmos deveres de registro e divulgação na CVM que a aberta.",a:false,e:"Falso. Essas exigências são da companhia aberta."},
+    {t:"O estatuto da fechada pode criar regras para a venda das ações, sem impedir a negociação.",a:true,e:"Verdadeiro. É a restrição à circulação das ações, que deve ser regulada com cuidado."}];
+  var res={};
+  function upd(){var c=0,n=Object.keys(res).length;for(var k in res)if(res[k])c++;
+    var r=n===qs.length?(c>=10?" Título: Guardião do Selo.":c>=6?" Título: Buscador das Relíquias. Revise as cartas que errou.":" Título: Iniciado. Volte à trilha e tente de novo."):"";
+    $("score").textContent="Pontuação: "+c+" acertos em "+n+" respondidas, de "+qs.length+". Vale a primeira resposta de cada uma."+r}
+  upd();
+  qs.forEach(function(q){
+    var d=document.createElement("div");d.className="glass q";
+    d.innerHTML='<div>'+q.t+'</div><div class="tabs"><button>Verdadeiro</button><button>Falso</button></div><div class="fb" aria-live="polite"></div>';
+    var b=d.querySelectorAll("button"),fb=d.querySelector(".fb");
+    [true,false].forEach(function(v,i){b[i].onclick=function(){var ok=v===q.a;if(!(q.t in res)){res[q.t]=ok;upd()}fb.className="fb "+(ok?"ok":"no");fb.textContent=(ok?"Certo! ":"Quase! ")+q.e}});
+    $("quiz").appendChild(d)});
+
+  /* Oficina */
+  var ow=[{n:"Sem dono",c:"var(--line)"},{n:"Yasmin",c:"var(--gold)"},{n:"Isabele",c:"var(--teal)"},{n:"Melissa",c:"var(--vio)"}];
+  var N=8,s=[0,0,0,0,0,0,0,0],svg=$("disc"),ps=[];
+  function pt(a,r){return [150+r*Math.cos(a),150+r*Math.sin(a)].map(function(v){return v.toFixed(1)}).join(" ")}
+  for(var i=0;i<N;i++){
+    var a0=i*2*Math.PI/N-Math.PI/2,a1=(i+1)*2*Math.PI/N-Math.PI/2,p=document.createElementNS(NS,"path");
+    p.setAttribute("d","M150 150L"+pt(a0,138)+"A138 138 0 0 1 "+pt(a1,138)+"Z");p.setAttribute("tabindex","0");p.setAttribute("role","button");
+    (function(i,p){function go(){s[i]=(s[i]+1)%ow.length;draw()}
+      p.addEventListener("click",go);p.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})})(i,p);
+    svg.appendChild(p);ps.push(p)}
+  var c0=document.createElementNS(NS,"circle");[["cx",150],["cy",150],["r",30],["fill","var(--bg)"],["stroke","var(--gold)"],["stroke-width",2.5]].forEach(function(a){c0.setAttribute(a[0],a[1])});c0.style.pointerEvents="none";svg.appendChild(c0);
+  var tx=document.createElementNS(NS,"text");[["x",150],["y",155],["text-anchor","middle"],["fill","var(--gold)"],["font-size",14],["font-family","Cormorant Garamond,serif"],["font-weight",700]].forEach(function(a){tx.setAttribute(a[0],a[1])});tx.style.pointerEvents="none";tx.textContent="S.A.";svg.appendChild(tx);
+  function fmt(n){return n.toLocaleString("pt-BR",{maximumFractionDigits:1})}
+  function draw(){var cnt=[0,0,0,0];
+    s.forEach(function(v,i){cnt[v]++;ps[i].setAttribute("fill",ow[v].c);ps[i].setAttribute("aria-label","Parte "+(i+1)+": "+ow[v].n)});
+    $("legend").innerHTML=ow.slice(1).map(function(o,k){return '<li><span class="dot" style="background:'+o.c+'"></span><b>'+o.n+'</b>: '+cnt[k+1]+' de 8 ações ('+fmt(cnt[k+1]*12.5)+'%)</li>'}).join("");
+    var b=1;for(var k=2;k<4;k++){if(cnt[k]>cnt[b])b=k}var m;
+    if(cnt[0]===N)m="Ninguém tem ações ainda. Toque nas partes do disco.";
+    else if(cnt[0]>0)m="Ainda há "+cnt[0]+" parte(s) sem dono. Por ora, quem tem mais ações é "+ow[b].n+".";
+    else m=ow[b].n+" tem "+cnt[b]+" de 8 ações e "+(cnt[b]>4?"vence sozinho(a) as votações comuns, pois tem mais da metade.":cnt[b]===4?"está exatamente na metade: precisa de apoio para decidir.":"precisa se aliar a outro acionista para formar maioria.");
+    $("msg").textContent=m}
+  $("reset").onclick=function(){s=[0,0,0,0,0,0,0,0];draw()};draw();
+  function sim(){var l=+$("lucro").value||0,a=+$("aA").value,m=l/2,f=function(x){return x.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})};
+    $("nA").textContent=a;$("divOut").textContent="Metade do lucro: "+f(m)+" para dividir entre as 8 ações. Yasmin, com "+a+" de 8 ("+fmt(a*12.5)+"%), recebe "+f(m*a/8)+"."}
+  ["lucro","aA"].forEach(function(id){$(id).addEventListener("input",sim)});sim();
+})();
+</script>
+</body>
+</html>
